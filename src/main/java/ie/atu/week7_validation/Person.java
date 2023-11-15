@@ -8,9 +8,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Person {
     @NotBlank(message =  "Name cannot be blank")
     @Size(min = 2, max = 15, message = "Name must be between 2 and 15 characters")
@@ -19,10 +20,10 @@ public class Person {
     @Size(min = 2 ,max = 3, message = "Title must be between 2 and 3 characters")
     private String title;
 
-    @Min(value = 1,message = "Id must be greater than 1")
-    private int employeeId;
+    @Min(value = 6,message = "Id must be greater than 5")
+    private String employeeId;
 
-    @Min(value = 1,message = "Age must be greater than 1")
+    @Min(value = 1,message = "Age must be greater than 0")
     private int age;
 
     @Email(message = "Invalid Email address")
